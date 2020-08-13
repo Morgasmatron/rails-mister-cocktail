@@ -1,11 +1,17 @@
-<h1 class="text-center">Your cocktail list</h1>
-
-<div class="text-center padded">
+<div class="home-banner"> 
+  <h1>cocktail</h1>
+  <p>if you can't be happy at least you can be drunk.</p>
+  <br>
   <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
 </div>
 
-<div class="container">
-  <% @cocktails.each do |cocktail| %>
-    <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
-  <% end %>
-</div>
+
+  <div class="container">
+    <ul class="row">
+      <% @cocktails.each do |cocktail| %>
+        <li class="col-md card-product">
+          <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+        </li>
+      <% end %>  
+    </ul>
+  </div>

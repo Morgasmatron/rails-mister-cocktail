@@ -1,0 +1,18 @@
+.home-banner {
+  background: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://images.unsplash.com/photo-1508028209469-933de69c0f1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+.home-banner h1 {
+  font-size: 124px;
+  text-shadow: 3px 3px 0px #F2A063;
+}
