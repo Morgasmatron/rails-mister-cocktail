@@ -37,7 +37,7 @@
     <div class="">
       <ul class="row justify-content-sm-center">
         <% @cocktails.each do |cocktail| %>
-        <li class="card-prduct col-6 col-md-6 card-product">
+        <li class="card col-6 col-md-6 card-product">
           <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
           <% if cocktail.photo.attached? %>
             <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
@@ -47,4 +47,5 @@
       </ul>
     </div>
   </div>
+
 
