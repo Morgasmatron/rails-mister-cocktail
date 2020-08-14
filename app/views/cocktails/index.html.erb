@@ -7,9 +7,9 @@
 
 
   <div class="container">
-    <ul class="row">
+    <ul class="row justify-content-sm-center">
       <% @cocktails.each do |cocktail| %>
-        <li class="col-md card-product">
+        <li class="col-6 col-md-4 card-product">
           <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
         </li>
       <% end %>  
