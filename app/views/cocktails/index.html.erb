@@ -1,8 +1,32 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "" %>
+    <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      </li>
+      <li class="nav-item">
+        <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+      </li>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+
 <div class="home-banner"> 
   <h1>cocktail</h1>
   <p>if you can't be happy at least you can be drunk.</p>
   <br>
-  <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
 </div>
 
 
@@ -11,6 +35,9 @@
       <% @cocktails.each do |cocktail| %>
         <li class="col-6 col-md-4 card-product">
           <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+          <% if cocktail.photo.attached? %>
+            <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
         </li>
       <% end %>  
     </ul>
