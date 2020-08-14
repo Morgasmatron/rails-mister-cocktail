@@ -17,9 +17,3 @@ import 'bootstrap';
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-import { loadDynamicBannerText } from '../components/banner';
-
-document.addEventListener('turbolinks:load', () => {
-  initSelect2();
-  toggleForm();
-});
