@@ -1,7 +1,16 @@
-<h1>Dose</h1>
+<body class="new_dose if action_name == 'new_dose'">
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-  <%= f.input :description, label: false, placeholder: "description" %>
-  <%= f.association :ingredient, label: false, placeholder: "ingredients" %>
-  <%= f.submit 'submit', class: "btn btn-primary"  %>
-<% end %>
+<div class="container">
+    <div class="card" style="width: 36rem;">
+    <div class="card-product">
+      <div class="">
+      <h1>dose</h1>
+        <%= simple_form_for [@cocktail, @dose] do |f| %>
+          <%= f.input :description, label: false, placeholder: "description" %>
+          <%= f.association :ingredient, label: false, placeholder: "ingredients" %>
+          <%= f.submit 'submit', class: "btn btn-primary"  %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

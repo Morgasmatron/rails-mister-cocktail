@@ -1,5 +1,5 @@
 <%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :photo, as: :file %>
+  <%= f.input :photo, label: false, as: :file %>
   <%= f.input :name, label: false, placeholder: "yours.." %>
   <%= f.submit 'submit', class: "btn btn-primary"  %>
 <% end %>

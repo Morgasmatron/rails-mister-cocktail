@@ -1,6 +1,9 @@
+<body class="index if action_name == 'index'">
+
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
   <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "" %>
+    <i class="fas fa-cocktail"></i>
     <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,14 +34,17 @@
 
 
   <div class="container">
-    <ul class="row justify-content-sm-center">
-      <% @cocktails.each do |cocktail| %>
-        <li class="col-6 col-md-4 card-product">
+    <div class="">
+      <ul class="row justify-content-sm-center">
+        <% @cocktails.each do |cocktail| %>
+        <li class="card-prduct col-6 col-md-6 card-product">
           <p><%= link_to cocktail.name, cocktail_path(cocktail) %></p>
           <% if cocktail.photo.attached? %>
             <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
           <% end %>
         </li>
-      <% end %>  
-    </ul>
+        <% end %>  
+      </ul>
+    </div>
   </div>
+

@@ -1,20 +1,22 @@
+<body class="show if action_name == 'show'">
+
 <div class="container">
-  <div class="row">
+  <div class="card">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <h1><%= @cocktail.name %></h1>
+      <div class="img">
+        <% if @cocktail.photo.attached? %>
+          <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
       <%= link_to 'Back', cocktails_path %>
-      <div class="container">
+      <div class="">
         <% @cocktail.doses.each do |dose| %>
           <p><%= dose.description %></p>
           <p><%= dose.ingredient.name %></p>
         <% end %>
+        <p><%= link_to "add dose", new_cocktail_dose_path(@cocktail) %></p>
       </div>
     </div>
   </div>
 </div>
-<%= link_to "add dose", new_cocktail_dose_path(@cocktail) %>
-
-<% if @cocktail.photo.attached? %>
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-
